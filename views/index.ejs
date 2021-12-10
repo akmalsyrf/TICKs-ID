@@ -1,0 +1,100 @@
+<!-- carousel jumbotron -->
+<div class="container-fluid bg-light">
+  <div class="row">
+    <!-- left carousel -->
+    <div class="col-5">
+      <div id="carouselExampleSlidesOnly" class="carousel slide bg-light" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container m-5">
+              <h1>Now Playing</h1>
+              <a href="#now" class="col-5 mt-5 btn btn-danger">More Info</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container m-5">
+              <h1>Playing Today</h1>
+              <a class="col-5 mt-5 btn btn-danger">More Info</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container m-5">
+              <h1>Playing Tomorrow</h1>
+              <a class="col-5 mt-5 btn btn-danger">More Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end left carousel -->
+
+    <!-- right carousel -->
+    <div class="col-7">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://montasefilm.com/wp-content/uploads/2021/09/Malignant-movie.jpg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="https://wallpapercave.com/wp/wp1874036.jpg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="https://wallpaperaccess.com/full/5849972.jpg" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- end right carousel -->
+  </div>
+</div>
+<!-- end carousel jumbotron -->
+
+<!-- movie list -->
+<div class="container-fluid my-5">
+  <div class="info mb-5">
+    <h2 class="text-center">BE THE FIRST TO KNOW!</h2>
+    <p class="text-center">At TICKs ID, you can find all the latest movie!</p>
+  </div>
+  <!-- now playing -->
+  <div id="now" class="my-5 bg-light p-2">
+    <h4 class="text-center fw-bold mb-3">Now Playing</h4>
+    <div class="movie-list d-flex justify-content-center">
+      <!-- movie card -->
+      <% for( let i = 0; i < 5; i++ ) { %>
+      <div class="card" style="width: 13rem">
+        <img
+          src="https://cdn0-production-images-kly.akamaized.net/UoDSrdbd4wUd0IN4jap3EzazA8I=/1280x1706/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3434118/original/014340800_1618897521-EzVqwiaVoAIAv-E.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Shang Chi</h5>
+          <span class="">80 minutes</span>
+          <p class="my-1">02-02-2022 17:17</p>
+          <% if (isAdmin != null) { %>
+          <a href="/admin-edit/1" class="btn btn-danger col-5">Edit</a>
+          <a href="/payment/1" class="btn btn-dark offset-1 col-5">Buy</a>
+          <% } else {%>
+          <a href="/payment/1" class="btn btn-danger col-12">Buy</a>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+      <!-- end movie card -->
+    </div>
+  </div>
+</div>
+<!-- end movie list -->

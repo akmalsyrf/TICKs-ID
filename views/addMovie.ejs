@@ -1,0 +1,54 @@
+<div class="container-fluid pb-5 bg-light" id="payment">
+  <div class="info mb-3">
+    <h2 class="text-center">Add movie</h2>
+  </div>
+  <form class="offset-3 col-6" action="/admin/" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <div class="card mb-2" style="width: 14rem">
+        <div id="preview-poster"></div>
+        <span class="m-3">Preview movie poster here</span>
+      </div>
+      <div class="card">
+        <input type="file" name="poster" onchange="handleChange()" />
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="title" class="fw-bold mb-2">Movie title</label>
+      <input name="movTitle" type="text" id="title" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="genre" class="fw-bold mb-2">Genre</label>
+      <select name="genre" class="form-select form-select-sm" id="genre" aria-label=".form-select-sm example">
+        <option value="1" selected>Action</option>
+        <option value="2">Animation</option>
+        <option value="3">Comedy</option>
+        <option value="4">Horror</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <label for="hour" class="fw-bold me-4">Movie hour</label>
+      <input name="movieHour" type="number" class="form-control" id="hour" aria-label="Amount (to the nearest dollar)" />
+      <span class="input-group-text">minutes</span>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="fw-bold mb-2">Date</label>
+      <input name="date" type="date" id="date" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="time" class="fw-bold mb-2">Time</label>
+      <input name="time" type="time" id="time" class="form-control" />
+    </div>
+    <div class="mb-3 text-end">
+      <button type="submit" class="btn btn-danger col-12">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function handleChange() {
+    const previewElement = document.getElementById("preview-poster");
+    const value = URL.createObjectURL(event.target.files[0]);
+
+    previewElement.innerHTML = `<img src="${value}" class="card-img-top" alt="..." />`;
+  }
+</script>

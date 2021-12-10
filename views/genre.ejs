@@ -1,0 +1,25 @@
+<div id="action" class="mb-5 bg-light p-2">
+  <div class="info mb-5">
+    <h2 class="text-center"><%= genre %></h2>
+  </div>
+  <div class="movie-list d-flex justify-content-center">
+    <!-- movie card -->
+    <% movies.forEach(movie => { %>
+    <div class="card" style="width: 13rem">
+      <img src="http://localhost:3000/uploads/<%= movie.image %>  " class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.name%></h5>
+        <span class=""><%= movie.movie_hour%> minutes</span>
+        <p class="my-1">02-02-2022 17:17</p>
+        <% if (isAdmin != null) { %>
+        <a href="/admin-edit/<%=movie.id %> " class="btn btn-danger col-5">Edit</a>
+        <a href="/payment/<%=movie.id %> " class="btn btn-dark offset-1 col-5">Buy</a>
+        <% } else {%>
+        <a href="/payment/<%=movie.id %> " class="btn btn-danger col-12">Buy</a>
+        <% } %>
+      </div>
+    </div>
+    <% }); %>
+    <!-- end movie card -->
+  </div>
+</div>

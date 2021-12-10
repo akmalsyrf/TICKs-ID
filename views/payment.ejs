@@ -1,0 +1,76 @@
+<div class="container-fluid pb-5 bg-light" id="payment">
+  <div class="info mb-5">
+    <h2 class="text-center">YOUR PAYMENT</h2>
+    <p class="text-center">Finish your payment and grab your popcorn!</p>
+  </div>
+  <form class="offset-3 col-6" action="/payment/" method="POST">
+    <% if (success) { %>
+    <div class="mb-3">
+      <label class="fw-bold mb-2" for="">Movie</label>
+      <div class="d-flex">
+        <div class="card" style="width: 10rem">
+          <img src="<%= image %> " class="card-img-top" alt="..." />
+          <p class="card-title m-2 text-center"><%= name %></p>
+        </div>
+        <div class="card ms-5" style="width: 13rem">
+          <img src="https://www.freepnglogos.com/uploads/qr-code-png/qr-code-file-wikipedia-code-svg-1.png" class="card-img-top" alt="..." />
+          <p class="card-title m-2 text-center">Or use this QR Code</p>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="fw-bold mb-2">Amount of tickets</label>
+      <select name="amount" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="fw-bold mb-2">Select Payment Method</label>
+      <div class="d-flex">
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+            <label class="form-check-label" for="flexRadioDefault1"> <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-icon-credit-cards-icon-set-softiconsm-21.png" alt="" width="50px" /> Credit Card </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+            <label class="form-check-label" for="flexRadioDefault2"> <img src="https://media.giphy.com/avatars/gopayindonesia/AAmaxmCU1RUT.jpg" alt="" width="50px" /> Gopay </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+            <label class="form-check-label" for="flexRadioDefault3"> <img src="https://play-lh.googleusercontent.com/B9cLFGLw4H6KD8I1nGElIZB9lKWjx3tTBEp4FmqCk0ietXHxJQq8YV5TwDIRxqof6A" alt="" width="50px" /> Shopee Pay </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" />
+            <label class="form-check-label" for="flexRadioDefault4"> <img src="https://savegame.id/wp-content/uploads/2019/12/dana.png" alt="" width="50px" /> Dana </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" />
+            <label class="form-check-label" for="flexRadioDefault5"> <img src="https://nanasutiana98.files.wordpress.com/2018/09/unnamed.png" alt="" width="50px" /> Ovo </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" />
+            <label class="form-check-label" for="flexRadioDefault6"> <img src="https://seeklogo.com/images/L/link-aja-logo-F029ED0939-seeklogo.com.png" alt="" width="50px" /> Link Aja </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 text-end">
+      <h4>Price Total</h4>
+      <p>Rp.75.000</p>
+      <button type="submit" class="btn btn-danger col-12">Buy</button>
+    </div>
+    <% } else {%>
+    <div class="container">
+      <h4 class="mb-5 text-center">You haven't selected a movie</h3>
+      <a href="/" class="btn btn-danger col-12">Back to home and select movie</a>
+    </div>
+    <% } %>
+  </form>
+</div>
